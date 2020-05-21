@@ -1,15 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-const CategoriesScreen = ({ navigation }) => {
+const CategoryMealsScreen = ({ navigation }) => {
   return (
     <View style={styles.screen}>
-      <Text>Categories Screen</Text>
+      <Text>Category Meal Screen</Text>
       <Button
-        title="Go to Meals"
+        title="Go to Meal Details"
         onPress={() => {
           navigation.navigate({
-            routeName: 'CategoryMeals',
+            routeName: 'MealDetail',
           });
         }}
       />
@@ -17,7 +17,7 @@ const CategoriesScreen = ({ navigation }) => {
   );
 };
 
-export default CategoriesScreen;
+export default CategoryMealsScreen;
 
 const styles = StyleSheet.create({
   screen: {
