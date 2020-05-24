@@ -32,6 +32,8 @@ const mealsReducer = (state = initialState, action) => {
     case SET_FILTERS:
       const appliedFilters = action.filters;
       const updatedFilteredMeals = state.meals.filter(meal => {
+        // if we're looking for gluten free (glutenFree is checked)
+        // and meal is NOT gluten free, we drop it from our updatedFilteredMeals
         if (appliedFilters.glutenFree && !meal.isGlutenFree) {
           return false;
         }
@@ -44,6 +46,7 @@ const mealsReducer = (state = initialState, action) => {
         if (appliedFilters.vegan && !meal.isVegan) {
           return false;
         }
+        // if it passes all the checks, we add meal to updatedFilteredMeals
         return true;
       });
 
